@@ -40,12 +40,6 @@
             <p>Attendance R & V</p>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="profile.php" class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'profile.php') ? 'active' : ''; ?>">
-            <i class="nav-icon fas fa-users"></i>
-            <p>Profile</p>
-          </a>
-        </li>
       </ul>
     </nav>
   </div>
