@@ -10,7 +10,7 @@
         $(document).ready(function() {
             setInterval(function() {
                 $("#checkcard").load('read_rfid.php')
-            }, 2000);
+            }, 1000);
         });
     </script>
 </head>
