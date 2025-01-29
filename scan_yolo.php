@@ -11,6 +11,10 @@
             max-width: 300px;
             margin: 20px auto;
         }
+        #loading-gif {
+        border-radius: 50%;
+        }
+
     </style>
 </head>
 <body>
@@ -37,7 +41,7 @@
         <section class="content">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Scanning Snapshot Folder</h3>
+                    <h3 class="card-title">Scanning for Snapshot</h3>
                 </div>
                 <div class="card-body text-center" id="snapshot-container">
                     <img src="images/scanning.gif" alt="Scanning" id="loading-gif">
