@@ -6,7 +6,7 @@ $(document).ready(function () {
             success: function (data) {
                 if (data !== "No file found") {
                     // Ganti ke uploading.gif
-                    $("#status-image").attr("src", "images/uploading.gif");
+                    $("#status-image").attr("src", "images/uploading2.gif");
 
                     // Kirim file ke API
                     uploadFile(data);
@@ -28,19 +28,19 @@ $(document).ready(function () {
             method: "POST",
             data: { filename: filename },
             success: function (response) {
-                $("#status-image").attr("src", "images/success.gif");
+                $("#status-image").attr("src", "images/success2.gif");
 
                 // Tampilkan hasil respons selama 5 detik
                 $("#response").html(response);
                 setTimeout(function () {
-                    $("#status-image").attr("src", "images/scanning.gif");
+                    $("#status-image").attr("src", "images/scanning2.gif");
                     $("#response").empty();
                     scanFolder();
                 }, 5000);
             },
             error: function () {
                 console.error("Error uploading file.");
-                $("#status-image").attr("src", "images/scanning.gif");
+                $("#status-image").attr("src", "images/scanning2.gif");
                 scanFolder();
             }
         });

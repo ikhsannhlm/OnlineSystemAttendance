@@ -11,9 +11,6 @@
             max-width: 300px;
             margin: 20px auto;
         }
-        #loading-gif {
-        border-radius: 50%;
-        }
 
     </style>
 </head>
@@ -44,7 +41,7 @@
                     <h3 class="card-title">Scanning for Snapshot</h3>
                 </div>
                 <div class="card-body text-center" id="snapshot-container">
-                    <img src="images/scanning.gif" alt="Scanning" id="loading-gif">
+                    <img src="images/scanning2.gif" alt="Scanning" id="loading-gif">
                 </div>
             </div>
             
@@ -69,7 +66,7 @@
                 dataType: "json",
                 success: function(response) {
                     if (response.status === "found") {
-                        $("#loading-gif").attr("src", "images/uploading.gif");
+                        $("#loading-gif").attr("src", "images/uploading2.gif");
                         sendToAPI(response.file_path, response.file_name);
                     } else {
                         setTimeout(scanFolder, 2000);
@@ -90,9 +87,9 @@
                 dataType: "json",
                 success: function(response) {
                     if (response.status === "success") {
-                        $("#loading-gif").attr("src", "images/success.gif");
+                        $("#loading-gif").attr("src", "images/success2.gif");
                         setTimeout(() => {
-                            $("#loading-gif").attr("src", "images/scanning.gif");
+                            $("#loading-gif").attr("src", "images/scanning2.gif");
                             scanFolder();
                         }, 5000);
                         
