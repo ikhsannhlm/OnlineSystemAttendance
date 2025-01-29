@@ -8,14 +8,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $date = date("Y-m-d");
     $time = date("H:i:s");
 
+    // Ambil file gambar dari form (jika ada)
+    $image_url = isset($_POST['image_url']) ? $_POST['image_url'] : '';
+
     $sql = "INSERT INTO scan_yolo (date, time, total_people_detected) VALUES ('$date', '$time', $total_people)";
 
     if (mysqli_query($connect, $sql)) {
-        // Panggil fungsi validasi setelah data berhasil disimpan
+        // Jalankan validasi setelah data disimpan
         validate_scans($date, $time, $total_people, $connect);
 
+        // Hapus file gambar jika ada
+        if (!empty($image_url) && file_exists($image_url)) {
+            unlink($image_url);
+        }
+
         echo "<script>
-                alert('Data berhasil disimpan dan validasi dijalankan!');
+                alert('Data berhasil disimpan dan gambar dihapus!');
                 window.location.href = 'scan_yolo.php'; // Sesuaikan halaman tujuan
               </script>";
     } else {

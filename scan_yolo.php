@@ -97,7 +97,7 @@
                             <h4>Total People Detected: ${response.total_people_detected}</h4>
                             <img src="${response.output_image}" class="img-fluid" alt="YOLO Detection Result">
                             <form action="save_result.php" method="POST" class="mt-3">
-                                <input type="hidden" name="image_url" value="${response.image_url}">
+                                <input type="hidden" name="image_url" value="${response.output_image}">
                                 <div class="form-group">
                                     <label for="total_people">Total People Detected</label>
                                     <input type="number" name="total_people" id="total_people" class="form-control" value="${response.total_people_detected}" required>
