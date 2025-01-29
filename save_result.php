@@ -23,8 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         echo "<script>
-                alert('Data berhasil disimpan dan gambar dihapus!');
-                window.location.href = 'scan_yolo.php'; // Sesuaikan halaman tujuan
+                alert('Data saved!');
+                window.location.href = 'scan_yolo.php';
               </script>";
     } else {
         echo "<script>
